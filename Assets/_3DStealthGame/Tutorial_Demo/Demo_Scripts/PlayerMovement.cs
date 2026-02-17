@@ -8,6 +8,8 @@ namespace StealthGame
     public class PlayerMovement : MonoBehaviour
     {
         public InputAction MoveAction;
+        public InputAction JumpAction;
+        public float jumpStrength = 50f;
 
         public float walkSpeed = 1.0f;
         public float turnSpeed = 20f;
@@ -28,10 +30,13 @@ namespace StealthGame
             m_AudioSource = GetComponent<AudioSource> ();
         
             MoveAction.Enable();
+            JumpAction.Enable();
         }
 
         void FixedUpdate ()
         {
+
+
             var pos = MoveAction.ReadValue<Vector2>();
         
             float horizontal = pos.x;
@@ -73,5 +78,11 @@ namespace StealthGame
         {
             return m_OwnedKeys.Contains(keyName);
         }
+
+        private void Update()
+        {
+            if (JumpAction.WasPressedThisFrame())
+                print("Jump");
+        }
     }
-}
+    }
