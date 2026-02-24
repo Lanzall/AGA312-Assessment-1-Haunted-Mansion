@@ -9,13 +9,14 @@ namespace StealthGame
 
         private void OnTriggerEnter(Collider other)
         {
-            PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+            //PlayerMovement player = other.gameObject.GetComponent<PlayerMovement>();
+            NewPlayerMovement player = other.gameObject.GetComponent<NewPlayerMovement>();
 
             //this wasn't a player
             if (player == null)
                 return;
         
-            player.AddKey(KeyName);
+           // player.AddKey(KeyName);
             Destroy(gameObject);
         }
     }

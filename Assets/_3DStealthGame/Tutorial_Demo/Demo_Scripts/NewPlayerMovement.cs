@@ -38,5 +38,24 @@ public class NewPlayerMovement : MonoBehaviour
         {
             print("Moving Forwards");
         }
+
+        bool hasHorizontalInput = !Mathf.Approximately(horizontal, 0f);
+        bool hasVerticalInput = !Mathf.Approximately(vertical, 0f);
+        bool isWalking = hasVerticalInput;
+        m_Animator.SetBool("IsWalking", isWalking);
+
+        if (isWalking)
+        {
+            if (!m_AudioSource.isPlaying)
+            {
+                m_AudioSource.Play();
+            }
+        }
+        else
+        {
+            m_AudioSource.Stop();
+        }
+
+
     }
 }
