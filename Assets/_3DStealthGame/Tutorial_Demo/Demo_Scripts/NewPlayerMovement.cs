@@ -7,6 +7,7 @@ using UnityEngine.EventSystems;
 public class NewPlayerMovement : MonoBehaviour
 {
     public InputAction MoveAction;
+    public InputAction AimAction;
 
     public float speed = 1f;
     public float turnSpeed = 125f;
@@ -23,6 +24,7 @@ public class NewPlayerMovement : MonoBehaviour
         GameObject TheGun = GameObject.Find("Gun");
 
         MoveAction.Enable();
+        AimAction.Enable();
     }
 
     void Update()
@@ -57,6 +59,16 @@ public class NewPlayerMovement : MonoBehaviour
             m_AudioSource.Stop();
         }
 
+        // When holding the space bar, the player begins to aim
+       
+        if (AimAction.ReadValue<float>() > 0)
+        {
+            m_Animator.SetBool("IsAiming", true);
+        }
+        else
+        {
+            m_Animator.SetBool("IsAiming", false);
+        }
 
     }
 }
