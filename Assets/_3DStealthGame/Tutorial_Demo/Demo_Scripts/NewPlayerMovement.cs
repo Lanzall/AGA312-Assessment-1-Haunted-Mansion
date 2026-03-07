@@ -20,6 +20,7 @@ public class NewPlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
+        GameObject TheGun = GameObject.Find("Gun");
 
         MoveAction.Enable();
     }
