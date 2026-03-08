@@ -306,6 +306,23 @@ MonoBehaviour:
       m_Action: Aim
       m_Flags: 0
     m_Flags: 0
+  InteractAction:
+    m_Name: Interact
+    m_Type: 0
+    m_ExpectedControlType: 
+    m_Id: 9ea5d0d0-86c6-4476-b41a-5277b6ad5e4f
+    m_Processors: 
+    m_Interactions: 
+    m_SingletonActionBindings:
+    - m_Name: 
+      m_Id: 2292e6b2-6d3d-4c14-8cdc-7f283447a069
+      m_Path: <Keyboard>/e
+      m_Interactions: 
+      m_Processors: 
+      m_Groups: 
+      m_Action: Interact
+      m_Flags: 0
+    m_Flags: 0
   speed: 2
   turnSpeed: 125
 --- !u!1 &83019021
@@ -559,6 +576,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 127458251}
   m_CullTransparentMesh: 1
+--- !u!1 &136091901
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 136091903}
+  - component: {fileID: 136091902}
+  m_Layer: 0
+  m_Name: DialogueManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &136091902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136091901}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea6e34cf3939eaf4f90c139dee1251c6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+--- !u!4 &136091903
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 136091901}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -11.21818, y: 0.5357, z: 3.36052}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &148984847
 GameObject:
   m_ObjectHideFlags: 0
@@ -2527,6 +2588,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 837137815}
+  - {fileID: 1511286574}
   m_Father: {fileID: 840455984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &480491500
@@ -2545,6 +2607,10 @@ MonoBehaviour:
     name: Ghost Guy
     sentences:
     - Check this wack ass gun out!
+    - Don't you think it's sick?
+    - Why does it look kind of stupid? Hey, budgets tight lately, ok?
+    - Why don't you go try it out? Shoot a few people?
+    - I'm sure they won't complaing all that much.
 --- !u!1 &501827745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5677,7 +5743,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1386007169}
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 480491499}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -35951,6 +36017,7 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
+  - {fileID: 136091903}
   - {fileID: 805581759}
   - {fileID: 908144305}
   - {fileID: 3590320055864552226}
@@ -35969,4 +36036,3 @@ SceneRoots:
   - {fileID: 83019024}
   - {fileID: 1438164828}
   - {fileID: 1376341321513762206}
-  - {fileID: 1511286574}

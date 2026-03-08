@@ -6,13 +6,20 @@ public class NPCInteractable : MonoBehaviour
 {
     public Dialogue dialogue;
 
-    void Start()
+    private void Start()
     {
-        
+        GameObject player = GameObject.FindGameObjectWithTag("Player");
+    }
+    public void TriggerDialogue()
+    {
+        Object.FindFirstObjectByType<DialogueManager>().StartDialogue(dialogue);
     }
 
-    void Update()
+    private void Update()
     {
-        
+        if (Input.GetKeyDown(KeyCode.E))
+        {
+            TriggerDialogue();
+        }
     }
 }

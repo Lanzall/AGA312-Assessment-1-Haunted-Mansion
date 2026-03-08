@@ -8,6 +8,7 @@ public class NewPlayerMovement : MonoBehaviour
 {
     public InputAction MoveAction;
     public InputAction AimAction;
+    public InputAction InteractAction;
 
     public float speed = 1f;
     public float turnSpeed = 125f;
@@ -25,6 +26,7 @@ public class NewPlayerMovement : MonoBehaviour
 
         MoveAction.Enable();
         AimAction.Enable();
+        InteractAction.Enable();
     }
 
     void Update()

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.InputSystem;
 
 public class DialogueManager : MonoBehaviour
 {
@@ -11,8 +12,9 @@ public class DialogueManager : MonoBehaviour
         sentences = new Queue<string>();    // Initialize the queue
     }
 
-    void Update()
+    public void StartDialogue(Dialogue dialogue)
     {
-        
+        Debug.Log("Starting conversation with " + dialogue.name);    // Log the name of the character speaking
     }
+
 }
