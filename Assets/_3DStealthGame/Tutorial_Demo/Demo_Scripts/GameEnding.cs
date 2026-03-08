@@ -15,7 +15,7 @@ namespace StealthGame
 
         bool m_IsPlayerAtExit;
         bool m_IsPlayerCaught;
-        //float m_Timer;
+        float m_Timer;
         bool m_HasAudioPlayed;
 
         private VisualElement m_EndScreen;
@@ -31,10 +31,10 @@ namespace StealthGame
             m_EndScreen = uiDocument.rootVisualElement.Q<VisualElement>("EndScreen");
             m_CaughtScreen = uiDocument.rootVisualElement.Q<VisualElement>("CaughtScreen");
 
-            /*m_Demo_GameTimerLabel = uiDocument.rootVisualElement.Q<Label>("Demo_TimerLabel");
+
             m_Demo_GameTimer = 0.0f;
             m_Demo_GameTimerIsTicking = true;
-            Demo_UpdateTimerLabel();*/
+
         }
     
         void OnTriggerEnter (Collider other)
@@ -52,11 +52,10 @@ namespace StealthGame
 
         void Update ()
         {
-            /*if (m_Demo_GameTimerIsTicking)
+            if (m_Demo_GameTimerIsTicking)
             {
                 m_Demo_GameTimer += Time.deltaTime;
-                Demo_UpdateTimerLabel();
-            }*/
+            }
         
             if (m_IsPlayerAtExit)
             {
@@ -70,7 +69,7 @@ namespace StealthGame
 
         void EndLevel (VisualElement element, bool doRestart, AudioSource audioSource)
         {
-            //m_Demo_GameTimerIsTicking = false;
+            m_Demo_GameTimerIsTicking = false;
         
             if (!m_HasAudioPlayed)
             {
@@ -78,7 +77,7 @@ namespace StealthGame
                 m_HasAudioPlayed = true;
             }
             
-            /*m_Timer += Time.deltaTime;
+            m_Timer += Time.deltaTime;
             element.style.opacity = m_Timer / fadeDuration;
 
             if (m_Timer > fadeDuration + displayImageDuration)
@@ -92,12 +91,9 @@ namespace StealthGame
                     Application.Quit();
                     Time.timeScale = 0;
                 }
-            }*/
+            }
         }
 
-        /*void Demo_UpdateTimerLabel()
-        {
-            m_Demo_GameTimerLabel.text = m_Demo_GameTimer.ToString("0.00");
-        }*/
+
     }
 }

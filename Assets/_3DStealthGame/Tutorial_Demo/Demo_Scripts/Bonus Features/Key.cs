@@ -16,7 +16,7 @@ namespace StealthGame
             if (player == null)
                 return;
         
-           // player.AddKey(KeyName);
+            player.AddKey(KeyName);
             Destroy(gameObject);
         }
     }

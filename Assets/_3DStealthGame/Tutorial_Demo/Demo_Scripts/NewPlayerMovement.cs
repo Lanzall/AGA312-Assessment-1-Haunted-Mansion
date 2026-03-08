@@ -16,6 +16,8 @@ public class NewPlayerMovement : MonoBehaviour
     Rigidbody m_Rigidbody;
     AudioSource m_AudioSource;
 
+    private List<string> m_OwnedKeys = new();
+
     void Start()
     {
         m_Animator = GetComponent<Animator>();
@@ -67,6 +69,16 @@ public class NewPlayerMovement : MonoBehaviour
             StartCoroutine(QuickTurnCoroutine());
         }
 
+    }
+
+    public void AddKey(string keyName)
+    {
+        m_OwnedKeys.Add(keyName);
+    }
+
+    public bool OwnKey(string keyName)
+    {
+        return m_OwnedKeys.Contains(keyName);
     }
 
     private void FixedUpdate()
