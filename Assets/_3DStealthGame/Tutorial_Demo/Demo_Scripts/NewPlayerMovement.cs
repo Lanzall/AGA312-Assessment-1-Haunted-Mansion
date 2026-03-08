@@ -8,7 +8,7 @@ public class NewPlayerMovement : MonoBehaviour
 {
     public InputAction MoveAction;
     public InputAction AimAction;
-    public InputAction InteractAction;
+    public InputAction QuickTurn;
 
     public float speed = 1f;
     public float turnSpeed = 125f;
@@ -22,11 +22,10 @@ public class NewPlayerMovement : MonoBehaviour
         m_Animator = GetComponent<Animator>();
         m_Rigidbody = GetComponent<Rigidbody>();
         m_AudioSource = GetComponent<AudioSource>();
-        GameObject TheGun = GameObject.Find("Gun");
 
         MoveAction.Enable();
         AimAction.Enable();
-        InteractAction.Enable();
+        QuickTurn.Enable();
     }
 
     void Update()
@@ -61,16 +60,24 @@ public class NewPlayerMovement : MonoBehaviour
             m_AudioSource.Stop();
         }
 
-        // When holding the space bar, the player begins to aim
-       
-        if (AimAction.ReadValue<float>() > 0)
+        if (QuickTurn.IsPressed())
         {
-            m_Animator.SetBool("IsAiming", true);
+            // Rotates the player 180 degrees over .25 seconds
+            StartCoroutine(QuickTurnCoroutine());
         }
-        else
-        {
-            m_Animator.SetBool("IsAiming", false);
-        }
+    }
 
+    private IEnumerator QuickTurnCoroutine()
+    {
+        float elapsedTime = 0f;
+        Quaternion startingRotation = m_Rigidbody.rotation;
+        Quaternion targetRotation = startingRotation * Quaternion.Euler(0, 180f, 0);
+        while (elapsedTime < 0.25f)
+        {
+            m_Rigidbody.MoveRotation(Quaternion.Slerp(startingRotation, targetRotation, elapsedTime / 0.25f));
+            elapsedTime += Time.deltaTime;
+            yield return null;
+        }
+        m_Rigidbody.MoveRotation(targetRotation);
     }
 }

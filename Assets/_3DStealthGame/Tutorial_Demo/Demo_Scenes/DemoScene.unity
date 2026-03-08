@@ -306,21 +306,21 @@ MonoBehaviour:
       m_Action: Aim
       m_Flags: 0
     m_Flags: 0
-  InteractAction:
-    m_Name: Interact
+  QuickTurn:
+    m_Name: Quick Turn
     m_Type: 0
     m_ExpectedControlType: 
-    m_Id: 9ea5d0d0-86c6-4476-b41a-5277b6ad5e4f
+    m_Id: 39fa87f8-e626-4773-9fe3-35f945ccd6ce
     m_Processors: 
     m_Interactions: 
     m_SingletonActionBindings:
     - m_Name: 
-      m_Id: 2292e6b2-6d3d-4c14-8cdc-7f283447a069
-      m_Path: <Keyboard>/e
+      m_Id: da7ea1af-8fe9-4c59-b016-75b42e21c027
+      m_Path: <Keyboard>/q
       m_Interactions: 
       m_Processors: 
       m_Groups: 
-      m_Action: Interact
+      m_Action: Quick Turn
       m_Flags: 0
     m_Flags: 0
   speed: 2
@@ -2617,7 +2617,6 @@ MonoBehaviour:
     - Why does it look kind of stupid? Hey, budgets tight lately, ok?
     - Why don't you go try it out? Shoot a few people?
     - I'm sure they won't be complaing all that much.
-  hasInteracted: 0
   animator: {fileID: 750687991}
 --- !u!114 &480491501
 MonoBehaviour:
@@ -2883,7 +2882,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &603975523
 Transform:
   m_ObjectHideFlags: 0
@@ -3866,7 +3865,7 @@ Camera:
     height: 1
   near clip plane: 0.1
   far clip plane: 5000
-  field of view: 60
+  field of view: 60.000004
   orthographic: 0
   orthographic size: 10
   m_Depth: -1
@@ -3892,8 +3891,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 805581756}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.163732, y: 0.49540082, z: -0.095684655, w: 0.84771127}
-  m_LocalPosition: {x: -11.9069, y: 1.84573, z: 4.02832}
+  m_LocalRotation: {x: 0.4219414, y: -0.00000003287744, z: 0.00000001530112, w: 0.9066231}
+  m_LocalPosition: {x: -9.39, y: 4.1, z: -7.83}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
