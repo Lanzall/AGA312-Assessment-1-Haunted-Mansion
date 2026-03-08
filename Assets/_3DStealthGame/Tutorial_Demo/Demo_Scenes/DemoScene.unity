@@ -479,7 +479,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Check out this cool ass gun
+  m_text: Text goes here.
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2505,8 +2505,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 480491499}
+  - component: {fileID: 480491500}
   m_Layer: 0
-  m_Name: Ghost Shower
+  m_Name: GhostNPC
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2528,6 +2529,22 @@ Transform:
   - {fileID: 837137815}
   m_Father: {fileID: 840455984}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &480491500
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480491498}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 991ad8bc5198b9f42842fecd20376abf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::NPCInteractable
+  dialogue:
+    name: Ghost Guy
+    sentences:
+    - Check this wack ass gun out!
 --- !u!1 &501827745
 GameObject:
   m_ObjectHideFlags: 0
@@ -5583,7 +5600,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1511286571
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6671,7 +6688,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Ghost Guy
+  m_text: Name
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
