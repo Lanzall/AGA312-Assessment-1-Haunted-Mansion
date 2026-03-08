@@ -7,7 +7,6 @@ using UnityEngine.EventSystems;
 public class NewPlayerMovement : MonoBehaviour
 {
     public InputAction MoveAction;
-    public InputAction AimAction;
     public InputAction QuickTurn;
 
     public float speed = 1f;
@@ -24,7 +23,6 @@ public class NewPlayerMovement : MonoBehaviour
         m_AudioSource = GetComponent<AudioSource>();
 
         MoveAction.Enable();
-        AimAction.Enable();
         QuickTurn.Enable();
     }
 
@@ -34,6 +32,9 @@ public class NewPlayerMovement : MonoBehaviour
 
         float horizontal = pos.x;
         float vertical = pos.y;
+
+        horizontal = Mathf.Round(horizontal);    //Rounding the horizontal input to -1, 0, or 1 to prevent random rotation (Deadzone)
+        vertical = Mathf.Round(vertical);
 
         m_Rigidbody.MoveRotation(m_Rigidbody.rotation * Quaternion.Euler(0, horizontal * turnSpeed * Time.deltaTime, 0));   //Rotating the player using the rigidbody
         m_Rigidbody.MovePosition (m_Rigidbody.position + transform.forward * vertical * speed * Time.deltaTime);    //Moving the player forward using the rigidbody
@@ -65,6 +66,12 @@ public class NewPlayerMovement : MonoBehaviour
             // Rotates the player 180 degrees over .25 seconds
             StartCoroutine(QuickTurnCoroutine());
         }
+
+    }
+
+    private void FixedUpdate()
+    {
+        m_Rigidbody.angularVelocity = Vector3.zero;    //Fix to prevent the player spinning by itself by resetting the angular velocity to zero every physics update
     }
 
     private IEnumerator QuickTurnCoroutine()

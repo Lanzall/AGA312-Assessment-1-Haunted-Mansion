@@ -24,6 +24,7 @@ public class NPCInteractable : MonoBehaviour
         Object.FindFirstObjectByType<DialogueManager>().StartDialogue(dialogue);
         hasInteracted = true;
         animator.SetBool("CanInteract", false);
+        
     }
 
     public void ContinueDialogue()
