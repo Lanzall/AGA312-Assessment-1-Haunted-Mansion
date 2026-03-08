@@ -6,9 +6,14 @@ public class NPCInteractable : MonoBehaviour
 {
     public Dialogue dialogue;
 
+    public bool hasInteracted;
+
+    public Animator animator;
+
     private void Start()
     {
         GameObject player = GameObject.FindGameObjectWithTag("Player");
+        hasInteracted = false;
     }
     public void TriggerDialogue()
     {
@@ -31,5 +36,15 @@ public class NPCInteractable : MonoBehaviour
             {
                 ContinueDialogue();
         }
+    }
+
+    public void CanTalkTrue()
+    {
+        animator.SetBool("CanInteract", true);
+    }
+
+    public void CanTalkFalse()
+    {
+        animator.SetBool("CanInteract", false);
     }
 }

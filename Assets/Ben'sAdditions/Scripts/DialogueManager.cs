@@ -44,8 +44,19 @@ public class DialogueManager : MonoBehaviour
         }
 
         string sentence = sentences.Dequeue();    // Remove the next sentence from the queue
-        dialogueText.text = sentence;    // Display the sentence in the dialogue text UI
+        StopAllCoroutines();    // Stop any ongoing typing effect so they don't overlap
+        StartCoroutine(TypeSentence(sentence));
 
+    }
+
+    IEnumerator TypeSentence (string sentence)
+    {
+        dialogueText.text = "";
+        foreach (char letter in sentence.ToCharArray())
+        {
+            dialogueText.text += letter;    // Add each letter to the dialogue text one by one
+            yield return null;    // Wait for the next frame before adding the next letter
+        }
     }
 
     void EndDialogue()
