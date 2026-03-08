@@ -15,11 +15,21 @@ public class NPCInteractable : MonoBehaviour
         Object.FindFirstObjectByType<DialogueManager>().StartDialogue(dialogue);
     }
 
+    public void ContinueDialogue()
+    {
+        Object.FindFirstObjectByType<DialogueManager>().DisplayNextSentence();
+    }
+
     private void Update()
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
             TriggerDialogue();
+        }
+
+        if (Input.GetKeyDown(KeyCode.Space))
+            {
+                ContinueDialogue();
         }
     }
 }

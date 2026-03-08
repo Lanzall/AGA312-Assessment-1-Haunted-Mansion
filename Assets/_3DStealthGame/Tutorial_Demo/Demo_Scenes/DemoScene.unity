@@ -605,6 +605,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea6e34cf3939eaf4f90c139dee1251c6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::DialogueManager
+  nameText: {fileID: 1744044858}
+  dialogueText: {fileID: 127458253}
 --- !u!4 &136091903
 Transform:
   m_ObjectHideFlags: 0
@@ -25231,7 +25233,7 @@ PrefabInstance:
     - target: {fileID: 1272346095187288742, guid: 25a9b51216ac79a4d8058aa58c2d6889,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1778264708129261651, guid: 25a9b51216ac79a4d8058aa58c2d6889,
         type: 3}
@@ -29805,7 +29807,7 @@ PrefabInstance:
     - target: {fileID: 1382306290451288063, guid: 3d8158841df6b824eb4a665f82a99938,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1382306290451288063, guid: 3d8158841df6b824eb4a665f82a99938,
         type: 3}
