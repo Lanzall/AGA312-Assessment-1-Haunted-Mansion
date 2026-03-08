@@ -13,14 +13,21 @@ public class DialogueManager : MonoBehaviour
     public Animator animator;
 
     private Queue<string> sentences;    // Queue to hold the sentences of the dialogue
+    private bool hasInteracted;
 
     void Start()
     {
         sentences = new Queue<string>();    // Initialize the queue
+        hasInteracted = false;
     }
 
     public void StartDialogue(Dialogue dialogue)
     {
+        if (hasInteracted)
+        {
+            return;    // If the player has already interacted, do not start a new dialogue
+        }
+
         animator.SetBool("IsOpen", true);
 
         nameText.text = dialogue.name;    // Display the name of the character in the UI
@@ -62,5 +69,6 @@ public class DialogueManager : MonoBehaviour
     void EndDialogue()
     {
         animator.SetBool("IsOpen", false);
+        hasInteracted = true;
     }
 }

@@ -6,9 +6,8 @@ public class NPCInteractable : MonoBehaviour
 {
     public Dialogue dialogue;
 
-    public bool hasInteracted;
-
     public Animator animator;
+    private bool hasInteracted;
 
     private void Start()
     {
@@ -17,7 +16,14 @@ public class NPCInteractable : MonoBehaviour
     }
     public void TriggerDialogue()
     {
+        if (hasInteracted)
+        {
+            return;
+        }
+
         Object.FindFirstObjectByType<DialogueManager>().StartDialogue(dialogue);
+        hasInteracted = true;
+        animator.SetBool("CanInteract", false);
     }
 
     public void ContinueDialogue()
@@ -40,6 +46,10 @@ public class NPCInteractable : MonoBehaviour
 
     public void CanTalkTrue()
     {
+        if (hasInteracted)
+        {
+            return;
+        }
         animator.SetBool("CanInteract", true);
     }
 
