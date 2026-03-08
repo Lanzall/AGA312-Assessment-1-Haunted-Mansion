@@ -10,6 +10,8 @@ public class DialogueManager : MonoBehaviour
     public TextMeshProUGUI nameText;
     public TextMeshProUGUI dialogueText;
 
+    public Animator animator;
+
     private Queue<string> sentences;    // Queue to hold the sentences of the dialogue
 
     void Start()
@@ -19,6 +21,8 @@ public class DialogueManager : MonoBehaviour
 
     public void StartDialogue(Dialogue dialogue)
     {
+        animator.SetBool("IsOpen", true);
+
         nameText.text = dialogue.name;    // Display the name of the character in the UI
 
         sentences.Clear();
@@ -46,6 +50,6 @@ public class DialogueManager : MonoBehaviour
 
     void EndDialogue()
     {
-        Debug.Log("End of conversation.");    // Log the end of the conversation
+        animator.SetBool("IsOpen", false);
     }
 }
